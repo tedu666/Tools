@@ -1,6 +1,6 @@
 let oConfig = {
 	"Luogu": {
-		"UserList": ["Twlight！", "wzj33300", "diqiuyi", "xujindong_", "xfrvq", "seanlsy"], // 用户列表
+		"UserList": ["diqiuyi", "seanlsy"], // 用户列表
 		"ProblemNum": 20, // 查看最后做了几道题
 		"fetchTime": 10 * 1000, // 两次检测间隔（单位毫秒）
 		"AlertType": "system", // 提示信息: system (系统) | alert (网页)
