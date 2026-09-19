@@ -13,7 +13,7 @@ def RemoveHTMLTags(Text):
 [Url, Did, FileName, NowUrl, JsonData, PNow] = ["", "", "", "", {}, 1];
 
 print("[为人民服务] E听说答案获取器 V1.0.0");
-print("E听说默认缓存根目录：%HOMEPATH%\\AppData\\Roaming\\74656D705F74656D705F74656D705F74002\\\n新版保存目录：%HOMEPATH%\\AppData\\Roaming\\ETS\\");
+print("E听说默认缓存根目录：%USERPROFILE%\\AppData\\Roaming\\74656D705F74656D705F74656D705F74002\\\n新版保存目录：%USERPROFILE%\\AppData\\Roaming\\ETS\\");
 
 while True:
     Url = input("请输入缓存文件具体目录（留空则退出）：");
@@ -53,7 +53,8 @@ while True:
 
         if QuestionType == "collector.picture": # 信息转述
             AnswerList.append([]);
-            AnswerList[-1].append(RemoveHTMLTags("采分点：\n" + JsonData["info"]["keypoint"]));
+            if "keypoint" in JsonData["info"]: AnswerList[-1].append(RemoveHTMLTags("采分点：\n" + JsonData["info"]["keypoint"]));
+            if "analyze" in JsonData["info"]: AnswerList[-1].append(RemoveHTMLTags("分析：\n" + JsonData["info"]["analyze"]));
             for Anslist in JsonData["info"]["std"]: AnswerList[-1].append(RemoveHTMLTags("可选答案：" + Anslist["value"]));
 
         SubP, WS.title = 1, "答案";
